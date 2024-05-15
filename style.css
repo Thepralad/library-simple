@@ -1,0 +1,9 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#container div{
+    margin: 30px;
+    padding:10px;
+    background-color: beige;
+    width: 150px;
+}
