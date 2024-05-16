@@ -15,27 +15,32 @@ function addBookToLibrary(title, author, pages, hasRead){
 
 function displayBook(){
     for (let i = 0; i < myLibrary.length; i++) {
+
         const _book = document.createElement('div');
         _book.classList.add('book');
         const _title = document.createElement('h3');
         const _author = document.createElement('p');
         const _pages = document.createElement('p');
-        const _hasRead = document.createElement('p');
-        const _removeBtn = document.createElement('button')
+        const _hasRead = document.createElement('button');
 
         _title.textContent = myLibrary[i].title;
         _author.textContent = myLibrary[i].author;
         _pages.textContent = `${myLibrary[i].pages} pages`;
         _hasRead.textContent =  myLibrary[i].hasRead;
-        _removeBtn.textContent = 'Remove'
+
         
         _book.appendChild(_title);
         _book.appendChild(_author);
         _book.appendChild(_pages);
         _book.appendChild(_hasRead);
-        _book.appendChild(_removeBtn);
-
         container.appendChild(_book);
+
+        _hasRead.addEventListener('click', function(){
+            if(_hasRead.textContent === 'Already read') // Use === for comparison
+                _hasRead.textContent = 'Not yet read';
+            else if(_hasRead.textContent === 'Not yet read') // Use === for comparison
+                _hasRead.textContent = 'Already read';
+        })
     }
 }
 
